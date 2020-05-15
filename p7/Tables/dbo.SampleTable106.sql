@@ -9,7 +9,8 @@ CREATE TABLE [dbo].[SampleTable106] (
 		[Address]          [varchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		[City]             [varchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		[wwcolumn_new]     [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-		[column_new1]      [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+		[column_new1]      [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		[column_new5]      [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
 )
 GO
 ALTER TABLE [dbo].[SampleTable106] SET (LOCK_ESCALATION = TABLE)
