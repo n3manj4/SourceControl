@@ -16,6 +16,7 @@ CREATE TABLE [dbo].[SampleTable164] (
 		[coaaa_new]            [varchar](1) NULL,
 		[coaaabbb_new]         [varchar](1) NULL,
 		[aaaaacolumn_new]      [varchar](1) NULL,
-		[aaaasscolumn_new]     [varchar](1) NULL
+		[aaaasscolumn_new]     [varchar](1) NULL,
+		[wwwcolumn_new]        [varchar](1) NULL
 )
 GO
