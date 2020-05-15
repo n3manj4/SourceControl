@@ -3,20 +3,24 @@ SET QUOTED_IDENTIFIER ON
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[SampleTable229] (
-		[PersonID]             [int] NULL,
-		[LastName]             [varchar](255) NULL,
-		[FirstName]            [varchar](255) NULL,
-		[Address]              [varchar](255) NULL,
-		[City]                 [varchar](255) NULL,
-		[column_new]           [varchar](1) NULL,
-		[columnnn_new]         [varchar](1) NULL,
-		[columnnnn_new]        [varchar](1) NULL,
-		[colasdf_new]          [varchar](1) NULL,
-		[coqwer_new]           [varchar](1) NULL,
-		[coaaa_new]            [varchar](1) NULL,
-		[coaaabbb_new]         [varchar](1) NULL,
-		[aaaaacolumn_new]      [varchar](1) NULL,
-		[aaaasscolumn_new]     [varchar](1) NULL,
-		[wwwcolumn_new]        [varchar](1) NULL
+		[PersonID]              [int] NULL,
+		[LastName]              [varchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		[FirstName]             [varchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		[Address]               [varchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		[City]                  [varchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		[column_new]            [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		[columnnn_new]          [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		[columnnnn_new]         [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		[colasdf_new]           [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		[coqwer_new]            [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		[coaaa_new]             [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		[coaaabbb_new]          [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		[aaaaacolumn_new]       [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		[aaaasscolumn_new]      [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		[wwwcolumn_new]         [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		[wwwqqqcolumn_new]      [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		[wwwqqqgcolumn_new]     [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
 )
+GO
+ALTER TABLE [dbo].[SampleTable229] SET (LOCK_ESCALATION = TABLE)
 GO
