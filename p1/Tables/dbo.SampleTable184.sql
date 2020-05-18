@@ -9,6 +9,7 @@ CREATE TABLE [dbo].[SampleTable184] (
 		[Address]         [varchar](255) NULL,
 		[City]            [varchar](255) NULL,
 		[column_new1]     [varchar](1) NULL,
-		[column_new2]     [varchar](1) NULL
+		[column_new2]     [varchar](1) NULL,
+		[column_new3]     [varchar](1) NULL
 )
 GO
