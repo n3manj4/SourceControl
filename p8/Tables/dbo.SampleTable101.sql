@@ -4,22 +4,21 @@ SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[SampleTable101] (
 		[PersonID]         [int] NULL,
-		[LastName]         [varchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-		[FirstName]        [varchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-		[Address]          [varchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-		[City]             [varchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-		[column_new1]      [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-		[column_new2]      [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-		[column_new3]      [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-		[column_new5]      [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-		[column_new6]      [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-		[column_new7]      [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-		[column_new8]      [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-		[column_new9]      [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-		[column_new10]     [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-		[column_new11]     [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-		[column_new12]     [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+		[LastName]         [varchar](255) NULL,
+		[FirstName]        [varchar](255) NULL,
+		[Address]          [varchar](255) NULL,
+		[City]             [varchar](255) NULL,
+		[column_new1]      [varchar](1) NULL,
+		[column_new2]      [varchar](1) NULL,
+		[column_new3]      [varchar](1) NULL,
+		[column_new5]      [varchar](1) NULL,
+		[column_new6]      [varchar](1) NULL,
+		[column_new7]      [varchar](1) NULL,
+		[column_new8]      [varchar](1) NULL,
+		[column_new9]      [varchar](1) NULL,
+		[column_new10]     [varchar](1) NULL,
+		[column_new11]     [varchar](1) NULL,
+		[column_new12]     [varchar](1) NULL,
+		[column_new13]     [varchar](1) NULL
 )
-GO
-ALTER TABLE [dbo].[SampleTable101] SET (LOCK_ESCALATION = TABLE)
 GO
