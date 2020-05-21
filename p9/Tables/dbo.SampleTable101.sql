@@ -40,6 +40,8 @@ CREATE TABLE [dbo].[SampleTable101] (
 		[column_new30]     [varchar](1) NULL,
 		[column_new31]     [varchar](1) NULL,
 		[column_new32]     [varchar](1) NULL,
-		[column_new33]     [varchar](1) NULL
+		[column_new33]     [varchar](1) NULL,
+		[column_new34]     [varchar](1) NULL,
+		[column_new35]     [varchar](1) NULL
 )
 GO
