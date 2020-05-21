@@ -34,6 +34,7 @@ CREATE TABLE [dbo].[SampleTable118] (
 		[column_new27]     [varchar](1) NULL,
 		[column_new28]     [varchar](1) NULL,
 		[column_new29]     [varchar](1) NULL,
-		[column_new30]     [varchar](1) NULL
+		[column_new30]     [varchar](1) NULL,
+		[column_new31]     [varchar](1) NULL
 )
 GO
