@@ -57,6 +57,7 @@ CREATE TABLE [dbo].[SampleTable111] (
 		[column_new47]     [varchar](1) NULL,
 		[column_new48]     [varchar](1) NULL,
 		[column_new49]     [varchar](1) NULL,
-		[column_new50]     [varchar](1) NULL
+		[column_new50]     [varchar](1) NULL,
+		[column_new51]     [varchar](1) NULL
 )
 GO
