@@ -68,6 +68,7 @@ CREATE TABLE [dbo].[SampleTable105] (
 		[column_new58]     [varchar](1) NULL,
 		[column_new59]     [varchar](1) NULL,
 		[column_new60]     [varchar](1) NULL,
-		[column_new61]     [varchar](1) NULL
+		[column_new61]     [varchar](1) NULL,
+		[column_new63]     [varchar](1) NULL
 )
 GO
