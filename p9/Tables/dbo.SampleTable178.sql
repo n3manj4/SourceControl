@@ -50,7 +50,8 @@ CREATE TABLE [dbo].[SampleTable178] (
 		[column_new76]     [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		[column_new77]     [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		[column_new78]     [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-		[column_new79]     [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+		[column_new79]     [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		[column_new80]     [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
 )
 GO
 ALTER TABLE [dbo].[SampleTable178] SET (LOCK_ESCALATION = TABLE)
