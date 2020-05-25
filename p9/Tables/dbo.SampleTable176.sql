@@ -69,6 +69,11 @@ CREATE TABLE [dbo].[SampleTable176] (
 		[name13]           [varchar](1) NULL,
 		[name14]           [varchar](1) NULL,
 		[name15]           [varchar](1) NULL,
-		[name16]           [varchar](1) NULL
+		[name16]           [varchar](1) NULL,
+		[name17]           [varchar](1) NULL,
+		[name18]           [varchar](1) NULL,
+		[name19]           [varchar](1) NULL,
+		[name20]           [varchar](1) NULL,
+		[name21]           [varchar](1) NULL
 )
 GO
