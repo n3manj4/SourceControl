@@ -101,7 +101,9 @@ CREATE TABLE [dbo].[SampleTable100] (
 		[name12]           [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		[name13]           [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		[name14]           [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-		[name15]           [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+		[name15]           [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		[name16]           [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		[name17]           [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
 )
 GO
 ALTER TABLE [dbo].[SampleTable100] SET (LOCK_ESCALATION = TABLE)
