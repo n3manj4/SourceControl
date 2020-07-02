@@ -9,7 +9,7 @@ CREATE TABLE [dbo].[SampleTable1001] (
 		[Addressaaaa]            [varchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		[City]               [varchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		[column_new1new]     [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-		[column_new2]        [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		[column_new2asdfds]        [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		[column_new3]        [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		[column_new5]        [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		[column_new6]        [varchar](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
