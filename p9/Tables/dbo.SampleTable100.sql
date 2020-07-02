@@ -2,7 +2,7 @@ SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 SET ANSI_PADDING ON
 GO
-CREATE TABLE [dbo].[SampleTable1001] (
+CREATE TABLE [dbo].[SampleTable1001111111111] (
 		[PersonID]           [int] NULL,
 		[LastName]           [varchar](100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		[FirstName]          [varchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
