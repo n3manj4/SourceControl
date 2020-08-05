@@ -28,4 +28,3 @@ EXEC sp_addextendedproperty N'MS_Description', N'Date and time the record was la
 GO
 ALTER TABLE [dbo].[BuildVersion] SET (LOCK_ESCALATION = TABLE)
 GO
-
