@@ -1,0 +1,4 @@
+CREATE USER [Luka]
+	FOR LOGIN [Luka]
+	WITH DEFAULT_SCHEMA = [dbo]
+GO
