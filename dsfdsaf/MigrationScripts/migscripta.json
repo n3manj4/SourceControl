@@ -1,0 +1,15 @@
+{
+  "Committed": false,
+  "DeploymentOrder": 0,
+  "Description": "asdfasdfasdf",
+  "FullyQualifiedName": "HumanResources.Employee",
+  "Name": "migscripta",
+  "ObjectName": "Employee",
+  "OldFullyQualifiedName": null,
+  "OrderOfExecution": 0,
+  "Schema": "HumanResources",
+  "Script": "SELECT * FROM HumanResources.Shift",
+  "SqlObjType": "Table",
+  "Time": "2020-10-07T17:09:04",
+  "UniqueId": "5cd1f6e6-1570-43fe-9d8c-6868e5f5260b"
+}
