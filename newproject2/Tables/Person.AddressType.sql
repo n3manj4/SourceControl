@@ -7,6 +7,7 @@ CREATE TABLE [Person].[AddressType] (
 		[Name]              [dbo].[Name] NOT NULL,
 		[rowguid]           [uniqueidentifier] NOT NULL ROWGUIDCOL,
 		[ModifiedDate]      [datetime] NOT NULL,
+		[sadf]              [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		CONSTRAINT [PK_AddressType_AddressTypeID]
 		PRIMARY KEY
 		CLUSTERED
