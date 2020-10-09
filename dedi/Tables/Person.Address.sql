@@ -12,6 +12,7 @@ CREATE TABLE [Person].[Address] (
 		[SpatialLocation]     [geography] NULL,
 		[rowguid]             [uniqueidentifier] NOT NULL ROWGUIDCOL,
 		[ModifiedDate]        [datetime] NOT NULL,
+		[asdfs]               [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		CONSTRAINT [PK_Address_AddressID]
 		PRIMARY KEY
 		CLUSTERED
