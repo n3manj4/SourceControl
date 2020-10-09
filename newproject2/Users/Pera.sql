@@ -1,4 +1,0 @@
-CREATE USER [Pera]
-	FOR LOGIN [PROD\NMiladin]
-	WITH DEFAULT_SCHEMA = [dbo]
-GO

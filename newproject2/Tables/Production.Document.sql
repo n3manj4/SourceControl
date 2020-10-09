@@ -17,7 +17,7 @@ CREATE TABLE [Production].[Document] (
 		[Document]            [varbinary](max) NULL,
 		[rowguid]             [uniqueidentifier] NOT NULL ROWGUIDCOL,
 		[ModifiedDate]        [datetime] NOT NULL,
-		CONSTRAINT [UQ__Document__F73921F744672977]
+		CONSTRAINT [UQ__Document__F73921F7BAEE5BF6]
 		UNIQUE
 		NONCLUSTERED
 		([rowguid])

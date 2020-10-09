@@ -11,6 +11,8 @@ CREATE TABLE [dbo].[DatabaseLog] (
 		[Object]            [sysname] COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		[TSQL]              [nvarchar](max) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 		[XmlEvent]          [xml] NOT NULL,
+		[dsf]               [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		[sdfdasfafd]        [int] NULL,
 		CONSTRAINT [PK_DatabaseLog_DatabaseLogID]
 		PRIMARY KEY
 		NONCLUSTERED
