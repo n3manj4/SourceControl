@@ -1,6 +1,6 @@
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
-SET ANSI_PADDING OFF
+SET ANSI_PADDING ON
 GO
 CREATE TABLE [Person].[BusinessEntityAddress] (
 		[BusinessEntityID]     [int] NOT NULL,
@@ -8,6 +8,7 @@ CREATE TABLE [Person].[BusinessEntityAddress] (
 		[AddressTypeID]        [int] NOT NULL,
 		[rowguid]              [uniqueidentifier] NOT NULL ROWGUIDCOL,
 		[ModifiedDate]         [datetime] NOT NULL,
+		[hgfhgf]               [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		CONSTRAINT [PK_BusinessEntityAddress_BusinessEntityID_AddressID_AddressTypeID]
 		PRIMARY KEY
 		CLUSTERED
