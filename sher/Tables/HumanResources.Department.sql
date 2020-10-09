@@ -10,6 +10,7 @@ CREATE TABLE [HumanResources].[Department] (
 		[fadsfsd]          [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		[fsdaf]            [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		[asdfsa]           [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		[dsfaf]            [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		CONSTRAINT [PK_Department_DepartmentID]
 		PRIMARY KEY
 		CLUSTERED

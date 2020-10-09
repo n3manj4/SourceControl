@@ -4,7 +4,8 @@ SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[Table_11] (
 		[Tadfasf]     [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-		[asdfsa]      [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+		[asdfsa]      [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		[asdfsad]     [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
 ) ON [PRIMARY]
 GO
 ALTER TABLE [dbo].[Table_11] SET (LOCK_ESCALATION = TABLE)
