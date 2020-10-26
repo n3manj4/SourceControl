@@ -15,7 +15,8 @@ BEGIN
 
     BEGIN TRY
         IF UPDATE([ProductID]) OR UPDATE([OrderQty]) OR UPDATE([UnitPrice])
-                BEGIN
+        -- Insert record into TransactionHistory 
+        BEGIN
             INSERT INTO [Production].[TransactionHistory]
                 ([ProductID]
                 ,[ReferenceOrderID]
@@ -36,7 +37,9 @@ BEGIN
                 INNER JOIN [Purchasing].[PurchaseOrderDetail] 
                 ON inserted.[PurchaseOrderID] = [Purchasing].[PurchaseOrderDetail].[PurchaseOrderID];
 
-                                    UPDATE [Purchasing].[PurchaseOrderHeader]
+            -- Update SubTotal in PurchaseOrderHeader record. Note that this causes the 
+            -- PurchaseOrderHeader trigger to fire which will update the RevisionNumber.
+            UPDATE [Purchasing].[PurchaseOrderHeader]
             SET [Purchasing].[PurchaseOrderHeader].[SubTotal] = 
                 (SELECT SUM([Purchasing].[PurchaseOrderDetail].[LineTotal])
                     FROM [Purchasing].[PurchaseOrderDetail]
@@ -55,7 +58,9 @@ BEGIN
     BEGIN CATCH
         EXECUTE [dbo].[uspPrintError];
 
-                        IF @@TRANCOUNT > 0
+        -- Rollback any active or uncommittable transactions before
+        -- inserting information in the ErrorLog
+        IF @@TRANCOUNT > 0
         BEGIN
             ROLLBACK TRANSACTION;
         END

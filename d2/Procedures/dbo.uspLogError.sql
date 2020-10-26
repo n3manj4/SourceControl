@@ -2,19 +2,30 @@ SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 GO
 
+-- uspLogError logs error information in the ErrorLog table about the 
+-- error that caused execution to jump to the CATCH block of a 
+-- TRY...CATCH construct. This should be executed from within the scope 
+-- of a CATCH block otherwise it will return without inserting error 
+-- information. 
 CREATE PROCEDURE [dbo].[uspLogError] 
-    @ErrorLogID [int] = 0 OUTPUT 
-AS                               
+    @ErrorLogID [int] = 0 OUTPUT -- contains the ErrorLogID of the row inserted
+AS                               -- by uspLogError in the ErrorLog table
 BEGIN
     SET NOCOUNT ON;
 
-            SET @ErrorLogID = 0;
+    -- Output parameter value of 0 indicates that error 
+    -- information was not logged
+    SET @ErrorLogID = 0;
 
     BEGIN TRY
-                IF ERROR_NUMBER() IS NULL
+        -- Return if there is no error information to log
+        IF ERROR_NUMBER() IS NULL
             RETURN;
 
-                                IF XACT_STATE() = -1
+        -- Return if inside an uncommittable transaction.
+        -- Data insertion/modification is not allowed when 
+        -- a transaction is in an uncommittable state.
+        IF XACT_STATE() = -1
         BEGIN
             PRINT 'Cannot log error since the current transaction is in an uncommittable state. ' 
                 + 'Rollback the transaction before executing uspLogError in order to successfully log error information.';
@@ -42,7 +53,8 @@ BEGIN
             ERROR_MESSAGE()
             );
 
-                SET @ErrorLogID = @@IDENTITY;
+        -- Pass back the ErrorLogID of the row inserted
+        SET @ErrorLogID = @@IDENTITY;
     END TRY
     BEGIN CATCH
         PRINT 'An error occurred in stored procedure uspLogError: ';

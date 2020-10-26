@@ -13,7 +13,7 @@ BEGIN
         INNER JOIN [Production].[ProductListPriceHistory] plph 
         ON p.[ProductID] = plph.[ProductID] 
             AND p.[ProductID] = @ProductID 
-            AND @OrderDate BETWEEN plph.[StartDate] AND COALESCE(plph.[EndDate], CONVERT(datetime, '99991231', 112)); 
+            AND @OrderDate BETWEEN plph.[StartDate] AND COALESCE(plph.[EndDate], CONVERT(datetime, '99991231', 112)); -- Make sure we get all the prices!
 
     RETURN @ListPrice;
 END;

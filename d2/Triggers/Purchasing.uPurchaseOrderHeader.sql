@@ -14,7 +14,8 @@ BEGIN
     SET NOCOUNT ON;
 
     BEGIN TRY
-                IF NOT UPDATE([Status])
+        -- Update RevisionNumber for modification of any field EXCEPT the Status.
+        IF NOT UPDATE([Status])
         BEGIN
             UPDATE [Purchasing].[PurchaseOrderHeader]
             SET [Purchasing].[PurchaseOrderHeader].[RevisionNumber] = 
@@ -26,7 +27,9 @@ BEGIN
     BEGIN CATCH
         EXECUTE [dbo].[uspPrintError];
 
-                        IF @@TRANCOUNT > 0
+        -- Rollback any active or uncommittable transactions before
+        -- inserting information in the ErrorLog
+        IF @@TRANCOUNT > 0
         BEGIN
             ROLLBACK TRANSACTION;
         END

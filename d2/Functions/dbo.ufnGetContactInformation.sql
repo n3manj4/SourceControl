@@ -5,13 +5,16 @@ GO
 CREATE FUNCTION [dbo].[ufnGetContactInformation](@PersonID int)
 RETURNS @retContactInformation TABLE 
 (
-        [PersonID] int NOT NULL, 
+    -- Columns returned by the function
+    [PersonID] int NOT NULL, 
     [FirstName] [nvarchar](50) NULL, 
     [LastName] [nvarchar](50) NULL, 
 	[JobTitle] [nvarchar](50) NULL,
     [BusinessEntityType] [nvarchar](50) NULL
 )
 AS 
+-- Returns the first name, last name, job title and business entity type for the specified contact.
+-- Since a contact can serve multiple roles, more than one row may be returned.
 BEGIN
 	IF @PersonID IS NOT NULL 
 		BEGIN

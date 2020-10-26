@@ -14,8 +14,10 @@ BEGIN
     SET NOCOUNT ON;
 
     BEGIN TRY
-                IF UPDATE([ProductID]) OR UPDATE([OrderQty]) OR UPDATE([UnitPrice]) OR UPDATE([UnitPriceDiscount]) 
-                BEGIN
+        -- If inserting or updating these columns
+        IF UPDATE([ProductID]) OR UPDATE([OrderQty]) OR UPDATE([UnitPrice]) OR UPDATE([UnitPriceDiscount]) 
+        -- Insert record into TransactionHistory
+        BEGIN
             INSERT INTO [Production].[TransactionHistory]
                 ([ProductID]
                 ,[ReferenceOrderID]
@@ -49,7 +51,9 @@ BEGIN
             WHERE C.[PersonID] = [Person].[Person].[BusinessEntityID];
         END;
 
-                        UPDATE [Sales].[SalesOrderHeader]
+        -- Update SubTotal in SalesOrderHeader record. Note that this causes the 
+        -- SalesOrderHeader trigger to fire which will update the RevisionNumber.
+        UPDATE [Sales].[SalesOrderHeader]
         SET [Sales].[SalesOrderHeader].[SubTotal] = 
             (SELECT SUM([Sales].[SalesOrderDetail].[LineTotal])
                 FROM [Sales].[SalesOrderDetail]
@@ -71,7 +75,9 @@ BEGIN
     BEGIN CATCH
         EXECUTE [dbo].[uspPrintError];
 
-                        IF @@TRANCOUNT > 0
+        -- Rollback any active or uncommittable transactions before
+        -- inserting information in the ErrorLog
+        IF @@TRANCOUNT > 0
         BEGIN
             ROLLBACK TRANSACTION;
         END

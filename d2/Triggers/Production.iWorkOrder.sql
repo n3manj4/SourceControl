@@ -33,7 +33,9 @@ BEGIN
     BEGIN CATCH
         EXECUTE [dbo].[uspPrintError];
 
-                        IF @@TRANCOUNT > 0
+        -- Rollback any active or uncommittable transactions before
+        -- inserting information in the ErrorLog
+        IF @@TRANCOUNT > 0
         BEGIN
             ROLLBACK TRANSACTION;
         END

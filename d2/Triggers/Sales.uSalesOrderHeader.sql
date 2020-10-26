@@ -14,7 +14,8 @@ BEGIN
     SET NOCOUNT ON;
 
     BEGIN TRY
-                IF NOT UPDATE([Status])
+        -- Update RevisionNumber for modification of any field EXCEPT the Status.
+        IF NOT UPDATE([Status])
         BEGIN
             UPDATE [Sales].[SalesOrderHeader]
             SET [Sales].[SalesOrderHeader].[RevisionNumber] = 
@@ -23,7 +24,8 @@ BEGIN
                 (SELECT inserted.[SalesOrderID] FROM inserted);
         END;
 
-                IF UPDATE([SubTotal])
+        -- Update the SalesPerson SalesYTD when SubTotal is updated
+        IF UPDATE([SubTotal])
         BEGIN
             DECLARE @StartDate datetime,
                     @EndDate datetime
@@ -36,18 +38,19 @@ BEGIN
                 (SELECT SUM([Sales].[SalesOrderHeader].[SubTotal])
                 FROM [Sales].[SalesOrderHeader] 
                 WHERE [Sales].[SalesPerson].[BusinessEntityID] = [Sales].[SalesOrderHeader].[SalesPersonID]
-                    AND ([Sales].[SalesOrderHeader].[Status] = 5) 
+                    AND ([Sales].[SalesOrderHeader].[Status] = 5) -- Shipped
                     AND [Sales].[SalesOrderHeader].[OrderDate] BETWEEN @StartDate AND @EndDate)
             WHERE [Sales].[SalesPerson].[BusinessEntityID] 
                 IN (SELECT DISTINCT inserted.[SalesPersonID] FROM inserted 
                     WHERE inserted.[OrderDate] BETWEEN @StartDate AND @EndDate);
 
-                        UPDATE [Sales].[SalesTerritory]
+            -- Update the SalesTerritory SalesYTD when SubTotal is updated
+            UPDATE [Sales].[SalesTerritory]
             SET [Sales].[SalesTerritory].[SalesYTD] = 
                 (SELECT SUM([Sales].[SalesOrderHeader].[SubTotal])
                 FROM [Sales].[SalesOrderHeader] 
                 WHERE [Sales].[SalesTerritory].[TerritoryID] = [Sales].[SalesOrderHeader].[TerritoryID]
-                    AND ([Sales].[SalesOrderHeader].[Status] = 5) 
+                    AND ([Sales].[SalesOrderHeader].[Status] = 5) -- Shipped
                     AND [Sales].[SalesOrderHeader].[OrderDate] BETWEEN @StartDate AND @EndDate)
             WHERE [Sales].[SalesTerritory].[TerritoryID] 
                 IN (SELECT DISTINCT inserted.[TerritoryID] FROM inserted 
@@ -57,7 +60,9 @@ BEGIN
     BEGIN CATCH
         EXECUTE [dbo].[uspPrintError];
 
-                        IF @@TRANCOUNT > 0
+        -- Rollback any active or uncommittable transactions before
+        -- inserting information in the ErrorLog
+        IF @@TRANCOUNT > 0
         BEGIN
             ROLLBACK TRANSACTION;
         END

@@ -20,11 +20,12 @@ BEGIN
         IF @DeleteCount > 0 
         BEGIN
             RAISERROR
-                (N'Vendors cannot be deleted. They can only be marked as not active.', 
-                10, 
-                1); 
+                (N'Vendors cannot be deleted. They can only be marked as not active.', -- Message
+                10, -- Severity.
+                1); -- State.
 
-                    IF @@TRANCOUNT > 0
+        -- Rollback any active or uncommittable transactions
+            IF @@TRANCOUNT > 0
             BEGIN
                 ROLLBACK TRANSACTION;
             END
@@ -33,7 +34,9 @@ BEGIN
     BEGIN CATCH
         EXECUTE [dbo].[uspPrintError];
 
-                        IF @@TRANCOUNT > 0
+        -- Rollback any active or uncommittable transactions before
+        -- inserting information in the ErrorLog
+        IF @@TRANCOUNT > 0
         BEGIN
             ROLLBACK TRANSACTION;
         END

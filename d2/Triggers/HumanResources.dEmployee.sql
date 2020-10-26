@@ -15,11 +15,12 @@ BEGIN
 
     BEGIN
         RAISERROR
-            (N'Employees cannot be deleted. They can only be marked as not current.', 
-            10, 
-            1); 
+            (N'Employees cannot be deleted. They can only be marked as not current.', -- Message
+            10, -- Severity.
+            1); -- State.
 
-                IF @@TRANCOUNT > 0
+        -- Rollback any active or uncommittable transactions
+        IF @@TRANCOUNT > 0
         BEGIN
             ROLLBACK TRANSACTION;
         END
