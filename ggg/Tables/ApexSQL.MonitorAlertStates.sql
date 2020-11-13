@@ -1,0 +1,16 @@
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [ApexSQL].[MonitorAlertStates] (
+		[Id]       [int] NOT NULL,
+		[Name]     [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+		CONSTRAINT [PK_AlertStates]
+		PRIMARY KEY
+		CLUSTERED
+		([Id])
+	ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [ApexSQL].[MonitorAlertStates] SET (LOCK_ESCALATION = TABLE)
+GO
