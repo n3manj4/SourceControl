@@ -1,0 +1,46 @@
+2020-11-27 05:06:36.321 ERROR [EXTENS:: 7.0.983.0]: An exception occurred
+Object reference not set to an instance of an object.
+Type: System.NullReferenceException
+	Stack trace
+	   at DevExpress.Utils.MVVM.ViewModelSourceProxy.Create(Type viewModelSourceType, Type type, Object[] parameters)
+	   at DevExpress.Utils.MVVM.POCOViewModelSourceProxy.DevExpress.Utils.MVVM.IViewModelSource.Create(Type viewModelType, Object[] parameters)
+	   at DevExpress.Utils.MVVM.MVVMContext.CreateViewModel(IViewModelSource viewModelSource, Object[] constructorParameters)
+	   at DevExpress.Utils.MVVM.MVVMContext.CreateViewModel()
+	   at DevExpress.Utils.MVVM.MVVMContext.EnsureViewModelCreated()
+	   at DevExpress.Utils.MVVM.MVVMContext.GetViewModel[TViewModel]()
+	   at DevExpress.Utils.MVVM.MVVMContext.SetBinding[TDestination,TDestValue,TViewModel,TValue](TDestination dest, Expression`1 destSelectorExpression, Expression`1 sourceSelectorExpression, Func`2 convert, Func`2 convertBack)
+	   at DevExpress.Utils.MVVM.MVVMContextFluentAPI`1.SetBinding[TDestination,TDestValue,TValue](TDestination destination, Expression`1 destSelectorExpression, Expression`1 sourceSelectorExpression, Func`2 convert, Func`2 convertBack)
+	   at ApexSQL.SourceControl.Presentation.Options.Views.GeneralOptions.SetBindings()
+	   at ApexSQL.SourceControl.Presentation.Options.Views.GeneralOptions..ctor()
+	   at ApexSQL.SourceControl.Presentation.Options.OptionsForm.InitAccordionMenu()
+	   at ApexSQL.SourceControl.Presentation.Options.OptionsForm..ctor()
+	   at ApexSQL.SourceControl.Presentation.Options.OptionsForm.ShowForm(IWin32Window mainWindow)
+	   at ApexSQL.SourceControl.Presentation.Database.PresentationLayer.InvokeMenuCommand(MenuEnum menuEnum, SQLObject sqlObject, LinkDatabaseInfo linkDatabaseInfo, Boolean isDatabaseNode, MsSQLConnectionInfo currentSession, Action`1 linkedStatusCallback, Action`1 changeDetectedCallback)
+	   at ApexSQL.SourceControl.Addin.Addin.InvokeCommand(MenuEnum menuEnum, Boolean refreshContextMenu)
+	   at ApexSQL.SourceControl.Addin.Addin.MenuItemOptionsClick(Item item)
+	   at ApexSQL.Common.Extensibility.Item.RaiseOnClick()
+
+2020-11-27 05:06:47.109 UIMSG : ApexSQL Source Control has already been activated [OK]
+2020-11-27 05:06:48.956 ERROR [EXTENS:: 7.0.983.0]: An exception occurred
+Object reference not set to an instance of an object.
+Type: System.NullReferenceException
+	Stack trace
+	   at DevExpress.Utils.MVVM.ViewModelSourceProxy.Create(Type viewModelSourceType, Type type, Object[] parameters)
+	   at DevExpress.Utils.MVVM.POCOViewModelSourceProxy.DevExpress.Utils.MVVM.IViewModelSource.Create(Type viewModelType, Object[] parameters)
+	   at DevExpress.Utils.MVVM.MVVMContext.CreateViewModel(IViewModelSource viewModelSource, Object[] constructorParameters)
+	   at DevExpress.Utils.MVVM.MVVMContext.CreateViewModel()
+	   at DevExpress.Utils.MVVM.MVVMContext.EnsureViewModelCreated()
+	   at DevExpress.Utils.MVVM.MVVMContext.GetViewModel[TViewModel]()
+	   at DevExpress.Utils.MVVM.MVVMContext.SetBinding[TDestination,TDestValue,TViewModel,TValue](TDestination dest, Expression`1 destSelectorExpression, Expression`1 sourceSelectorExpression, Func`2 convert, Func`2 convertBack)
+	   at DevExpress.Utils.MVVM.MVVMContextFluentAPI`1.SetBinding[TDestination,TDestValue,TValue](TDestination destination, Expression`1 destSelectorExpression, Expression`1 sourceSelectorExpression, Func`2 convert, Func`2 convertBack)
+	   at ApexSQL.SourceControl.Presentation.Options.Views.GeneralOptions.SetBindings()
+	   at ApexSQL.SourceControl.Presentation.Options.Views.GeneralOptions..ctor()
+	   at ApexSQL.SourceControl.Presentation.Options.OptionsForm.InitAccordionMenu()
+	   at ApexSQL.SourceControl.Presentation.Options.OptionsForm..ctor()
+	   at ApexSQL.SourceControl.Presentation.Options.OptionsForm.ShowForm(IWin32Window mainWindow)
+	   at ApexSQL.SourceControl.Presentation.Database.PresentationLayer.InvokeMenuCommand(MenuEnum menuEnum, SQLObject sqlObject, LinkDatabaseInfo linkDatabaseInfo, Boolean isDatabaseNode, MsSQLConnectionInfo currentSession, Action`1 linkedStatusCallback, Action`1 changeDetectedCallback)
+	   at ApexSQL.SourceControl.Addin.Addin.InvokeCommand(MenuEnum menuEnum, Boolean refreshContextMenu)
+	   at ApexSQL.SourceControl.Addin.Addin.MenuItemOptionsClick(Item item)
+	   at ApexSQL.Common.Extensibility.Item.RaiseOnClick()
+
+2020-11-27 05:09:02.575 UIMSG : Custom script folder 'C:\Users\User\AppData\Local\ApexSQL\ApexSQLAddinsLogs' is linked to source control [OK]
