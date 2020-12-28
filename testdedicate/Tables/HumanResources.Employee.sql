@@ -22,6 +22,7 @@ CREATE TABLE [HumanResources].[Employee] (
 		[fdsafad]               [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		[adf]                   [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		[dsfa]                  [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		[aaaa]                  [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		CONSTRAINT [PK_Employee_BusinessEntityID]
 		PRIMARY KEY
 		CLUSTERED
