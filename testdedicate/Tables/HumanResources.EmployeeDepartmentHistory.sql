@@ -1,6 +1,6 @@
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
-SET ANSI_PADDING OFF
+SET ANSI_PADDING ON
 GO
 CREATE TABLE [HumanResources].[EmployeeDepartmentHistory] (
 		[BusinessEntityID]     [int] NOT NULL,
@@ -9,6 +9,7 @@ CREATE TABLE [HumanResources].[EmployeeDepartmentHistory] (
 		[StartDate]            [date] NOT NULL,
 		[EndDate]              [date] NULL,
 		[ModifiedDate]         [datetime] NOT NULL,
+		[sdfg]                 [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		CONSTRAINT [PK_EmployeeDepartmentHistory_BusinessEntityID_StartDate_DepartmentID]
 		PRIMARY KEY
 		CLUSTERED
