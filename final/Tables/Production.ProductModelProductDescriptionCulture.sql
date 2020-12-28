@@ -38,7 +38,7 @@ GO
 ALTER TABLE [Production].[ProductModelProductDescriptionCulture]
 	WITH CHECK
 	ADD CONSTRAINT [FK_ProductModelProductDescriptionCulture_Culture_CultureID]
-	FOREIGN KEY ([CultureID]) REFERENCES [Production].[Culture] ([CultureID])
+	FOREIGN KEY ([CultureID]) REFERENCES [Production].[Culture2] ([CultureID])
 ALTER TABLE [Production].[ProductModelProductDescriptionCulture]
 	CHECK CONSTRAINT [FK_ProductModelProductDescriptionCulture_Culture_CultureID]
 
